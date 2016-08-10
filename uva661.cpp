@@ -21,19 +21,25 @@ int main()
 
 
 
-        int trak[operation]={0};
+        int trak[machine_number]={0};
         int res=0;
+        int dummy[operation];
+        for(int j=0;j<operation;j++)
+        {
+            cin>>dummy[j];
+        }
         for(int j=0;j<operation;j++)
         {
             int flag=0;
-            cin>>get_id;
+           // cin>>get_id;
+           get_id=dummy[j];
 
-                if(trak[get_id]==get_id)
+                if(trak[get_id]==1)
                 {
 
                    trak[get_id]=0;
 
-              //    cout<<"found on"<<res-cap[get_id]<<"funck"<<maxx<<endl;
+              //   cout<<"found on"<<res-cap[get_id]<<"funck"<<maxx<<endl;
                    res-=cap[get_id];
                    flag=1;
                 }
@@ -42,7 +48,6 @@ int main()
             if(flag==0)
             {
                  res+=cap[get_id];
-                 cout<<"fuck"<<res<<endl;
                  if(maxx<res)
                     maxx=res;
 
@@ -51,12 +56,13 @@ int main()
                      cout<<"Sequence "<<sequen<<endl;
                      cout<<"Fuse was blown."<<endl<<endl;
                      main_flag=1;
+                     j=operation;
                      break;
 
 
                  }
 
-                 trak[get_id]=get_id;
+                 trak[get_id]=1;
 
 
             }
